@@ -1,0 +1,60 @@
+name: ai-pipeline
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - jupyterlab=3.6.3
+  # parallel computing
+  - openmpi=5.0.8
+  - mpi4py=4.1.1 
+  #####
+  - pip
+  - pip:
+    - ipykernel==6.29.5 # For running IPython kernels
+    - numpy==2.1.3 #old working was 1.26.4
+    - matplotlib==3.9.3 # Matplotlib for plotting
+    - pandas==2.2.3 # Pandas for data manipulation
+    - seaborn==0.13.2 # Seaborn for statistical data visualization
+    - scipy==1.14.1 # SciPy for scientific and technical computing
+    - mpmath==1.3.0 # Mpmath for arbitrary-precision arithmetic
+    - cffi==1.17.1 # CFFI for calling C code from Python
+    - pytest==8.3.4 # Pytest for testing
+    - pyyaml==6.0.2 # PyYAML for reading and writing YAML
+    - sympy==1.13.3 # SymPy for symbolic mathematics
+    - nbformat==5.10.4 # NBFormat for working with Jupyter notebooks
+    ###############################################################
+    # Cosmology
+    - camb==1.6.4 # CMB, Boltzmann
+    - classy==3.3.3.0 # Boltzmann code Cosmology
+    ###############################################################
+    # samplers
+    - getdist==1.5.4 # GetDist for analyzing MCMC samples
+    - chainconsumer==1.2.5 # ChainConsumer for visualizing MCMC chains
+    - emcee==3.1.2 # Marchov Chain Monte Carlo Sampler
+    - corner # simple plotting for sampler chains
+    - pymultinest
+    ##############################################################
+    # Interactive
+    - ipympl # enables matplotlib widget
+    - jupyterlab-widgets==3.0.15
+    - pyqt5==5.15.11
+    - pyqt5-qt5==5.15.17
+    - pyqt5-sip==12.17.0
+    - pyqtgraph==0.13.7 # PyQtGraph for fast plotting with PyQt
+    - plotly==5.24.1 # Plotly for interactive plotting
+    - ipywidgets==8.1.5 # Widgets for interactivity in Jupyter
+    ##########################################################
+    # AI / GNN / CNN 
+    - torch==2.8.0 # core PyTorch
+    - torchvision==0.23.0
+    - torchaudio==2.8.0
+    - torch-geometric==2.7.0 # Graph Neural Network framework
+    - torch-scatter==2.1.2 
+    - torch-sparse==0.6.18 
+    - torch-cluster==1.6.3 
+    - torch-spline-conv==1.2.2
+    - scikit-learn==1.7.2    # ML utilities
+    - networkx==3.5 # graph manipulation
+    - tqdm==4.67.1  # progress bars
+    ###########################################################
+    

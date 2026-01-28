@@ -1,0 +1,111 @@
+=========================================
+INSTALLATION INSTRUCTIONS
+=========================================
+
+This project uses a Conda environment defined in:
+  ai-pipeline-env.yml
+
+All commands below should be run from the project root directory.
+
+-----------------------------------------
+1. INSTALLATION STEPS
+-----------------------------------------
+
+STEP 1 — Install Miniconda / Anaconda  
+If not already installed, download from:  
+  https://docs.conda.io/en/latest/miniconda.html
+
+STEP 2 — Create the environment from YAML
+
+  conda env create -f ai-pipeline-env.yml
+
+This creates a Conda environment named:
+  ai-pipeline
+
+STEP 3 — Activate the environment
+
+  conda activate ai-pipeline
+
+STEP 4 — Install Jupyter kernel (optional but recommended)
+
+Inside the environment:
+
+  python -m ipykernel install --user --name ai-pipeline --display-name "AI Pipeline Env"
+
+This makes the environment available inside JupyterLab and notebooks.
+
+STEP 5 — Launch JupyterLab
+
+  jupyter lab
+
+You should now see the "AI Pipeline Env" kernel in the notebook kernel selector.
+
+-----------------------------------------
+2. EXPECTED PROJECT STRUCTURE
+-----------------------------------------
+
+ai-optimized-pipeline
+├── ai-pipeline-env.yml
+├── Data
+│   ├── gnn_camb_dataset.csv
+│   ├── gnn_class_dataset.csv
+│   ├── gnn_emcee_dataset.csv
+│   └── std-camb-data.csv
+├── figures
+│   ├── camb-cpu.png
+│   ├── camb-error.png
+│   └── camb-Error-vs-CPU.png
+├── gnn_utils
+│   ├── gnn_model_utils.py
+│   ├── gnn_train.py
+│   └── inverse_design_utils.py
+├── notebooks
+│   ├── gnn_model_eval.ipynb
+│   ├── gnn_train.ipynb
+│   ├── make_dataset_gnn.ipynb
+│   ├── pipeline_test.ipynb
+│   └── predict_optimum_pars.ipynb
+├── pipeline
+│   ├── engine.py
+│   ├── functions.py
+│   └── modules.py
+├── install.txt
+└── README.md
+
+The folder structure should be preserved to avoid import issues.
+
+-----------------------------------------
+3. TROUBLESHOOTING
+-----------------------------------------
+
+1. Import errors (e.g. "ModuleNotFoundError: gnn_utils"):
+   - ensure the ai-pipeline environment is activated
+   - ensure the working directory is the project root
+
+2. CLASS or CAMB OpenMP issues:
+   Try setting:
+     export OMP_NUM_THREADS=1
+
+3. PyTorch Geometric installation issues:
+   All required packages are included in the YAML.
+   Rebuilding the environment usually resolves issues:
+
+     conda remove -n ai-pipeline --all
+     conda env create -f ai-pipeline-env.yml
+
+-----------------------------------------
+4. OPTIONAL — CLEAN INSTALL
+-----------------------------------------
+
+To remove the environment:
+
+  conda remove -n ai-pipeline --all
+
+To recreate it:
+
+  conda env create -f ai-pipeline-env.yml
+
+-----------------------------------------
+INSTALLATION COMPLETE
+-----------------------------------------
+
