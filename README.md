@@ -73,7 +73,7 @@ Using the trained surrogate, the framework identifies parameter settings that sa
 ---
 
 ## Project Structure
-
+```
 ai-optimized-pipeline
 ├── ai-pipeline-env.yml
 ├── Data
@@ -101,7 +101,7 @@ ai-optimized-pipeline
 │   ├── functions.py
 │   └── modules.py
 └── README.md
-
+```
 
 ---
 
@@ -132,10 +132,4 @@ This project demonstrates how **graph-based surrogate models** can be used to le
 The framework is modular, extensible, and applicable to a wide range of numerical analysis pipelines.
 
 ---
-
-## Future Work
-
-- Validation of optimized configurations with direct solver runs  
-- Extension to additional scientific modules  
-- Multi-objective optimization (accuracy, runtime, memory)
 
